@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gameoflife.GameOfLifeTest" tests="40" failures="0" errors="0" timestamp="2014-04-30T05:04:06" hostname="Amar-PC" time="0.079">
+  <properties/>
+  <testcase name="testDeadToDeadwithEightAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.011"/>
+  <testcase name="testOneAliveNeighborWithCellAtTopRightCorner" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testTwoLiveNeighborsWithCellAtCenter" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testZeroLiveNeighborsForCellAtCenter" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testAliveToDeadWithOneAliveNeighbor" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testAliveToDeadWithZeroAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testNextPatternWithPreviousPattern" classname="gameoflife.GameOfLifeTest" time="0.012"/>
+  <testcase name="testDeadToDeadwithFiveAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneLiveNeighborsWithCellAtCenterAlive" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testDeadToDeadwithZeroAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testDeadToAlivewithThreeAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testAliveToDeadWithEightNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneAliveNeighborWithCellAtBottomLeftCorner" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testNextPatternForStillLifeBoat" classname="gameoflife.GameOfLifeTest" time="0.009"/>
+  <testcase name="testAliveToDeadWithFiveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testAliveToAlivewithTwoAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testZeroLiveNeighborWithCellAtMiddleLeft" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testOneLiveNeighborWithCellAtMiddleLeft" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneLiveNeighborWithCellAtMiddleBottom" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testNextPatternWithGliderPattern" classname="gameoflife.GameOfLifeTest" time="0.005"/>
+  <testcase name="testFiveLiveNeighborsWithCellAtCenter" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneLiveNeighborWithCellAtMiddleRight" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testAliveToAlivewithThreeAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testTwoLiveNeighborWithCellAtMiddleLeft" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneAliveNeighborWithCellAtBottomRightCorner" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testNextPatternWithNullGrid" classname="gameoflife.GameOfLifeTest" time="0.004"/>
+  <testcase name="testOneLiveNeighborsWithCellAtCenter" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testNextPatternInALoop" classname="gameoflife.GameOfLifeTest" time="0.009"/>
+  <testcase name="testTwoLiveNeighborWithCellAtMiddleTop" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testAliveToDeadWithFourAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testDeadToDeadwithOneAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testZeroLiveNeighborWithCellAtMiddleTop" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneLiveNeighborWithCellAtMiddleTop" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testDeadToDeadwithTwoAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testTwoLiveNeighborsWithCellAtCenterAlive" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testDeadToDeadwithFourAliveNeighbors" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testOneAliveNeighborWithCellAtTopLeftCorner" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testCanary" classname="gameoflife.GameOfLifeTest" time="0.001"/>
+  <testcase name="testZeroLiveNeighborsForInitialBoard" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <testcase name="testTwoAliveNeighborWithCellAtTopLeftCorner" classname="gameoflife.GameOfLifeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

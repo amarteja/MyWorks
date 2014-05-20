@@ -1,0 +1,10 @@
+Total [100]: 100
+
+Program runs [20]:
+Test quality [20]:
+Test Coverage [10]:
+Code quality [10]:
+Design quality [10]:
+GUI code quality [10]:
+Directory structure, etc. [10]:
+Response to questions [10]:

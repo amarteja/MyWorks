@@ -1,0 +1,30 @@
+Assign1: Due 11:59PM September 24th
+
+Using Test First Development implement the program that we designed in HW1.
+Do not let the design that was created in HW1 constraint us.
+
+When you complete the coding (and only after you do), answer the following:
+
+
+
+Compare the design that's living in the code with the design we came up with in HW1.
+
+In HomeWork-1 design, we had three classes namely GameOfLife, CellState, NextGeneration.Where GameOfLife is used to get the input and updating the board, CellState is used to get the status of the cell and NextGeneration is used to check neighbor and update each cell according to game of life rules.
+
+In Assignment-1, we realized that we just used two classes to implement this entire logic.One is GameOfLife and other is GameOfLifeUI.GameOfLife implements nextgeneration, is cell Alive, rules and number of live neighbors methods whereas GameOfLifeUI handles GUI of the game.
+
+
+
+What are some of the things you learned while working on this assignment, take away
+points that will help us in future design/development.
+
+Through Test First Development we learned how to write the minimum code and remove the unwanted lines of code.We also learned the principles like SPR,YAGNI,DRY.
+The concept of Refactoring, writing set of tasks and avoiding smelly code is the remarkable notice we made after this assignment.
+
+
+
+
+Did you have fun working on the assignment?
+
+We had lot of fun and discovered interesting aspects in this assignment.We were wondering how concise this code is, even after handling many tasks.Both of us never worked with TDD approach, so learning it and implementing it is quite interesting. The most fascinating part is writing the test first and then the code just needed for that test. 
+After so many warnings from the reviews, we finally got to know how to make the code breath.
