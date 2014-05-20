@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="HealthyHomes">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Healthy Homes Inspector Application</title>
+
+	<!-- Bootstrap -->
+	<link href="js/lib/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+        
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/js/angular-touch.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="phonegap.js"></script>
+	<script type="text/javascript" src="js/lib/camera.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>    
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/lib/js/bootstrap.min.js"></script>
+	<script src="checklist-model.js"></script>
+	<link rel="stylesheet" href="js/lib/css/slidebars.min.css">
+</head>
+<body>
+	<div class="container" data-ng-controller="walkthrough_roomaudit_n" data-ng-init="init('index.html')" ng-swipe-right="prevPage('walkthrough_roomaudit_ps.html')" ng-swipe-left="next('walkthrough_roomaudit_l.html')">
+		<div class="row">
+
+			<form class="form-horizontal" name="walkthrough_n" novalidate>
+				<fieldset>
+					<legend align="center"><button class="btn-default toggle-left pull-left glyphicon glyphicon-align-justify"></button>
+						<div class="sb-slidebar sb-left" align="center">
+							<div class="list-group">
+								<h4 align="center"> Main Menu</h4>
+								<a  class="list-group-item" href="assessment_coversheet.html"> Assessment Coversheet</a>
+								<a  class="list-group-item" href="general_neighbourhood_characteristics.html">General Neighbourhood Characteristics</a>
+								<a  class="list-group-item list-group-item-danger" href="index.html"> Logout</a>
+								<a  class="list-group-item" href="about.html"> About</a>
+								<a  class="list-group-item" href="credits.html"> Credits</a>
+							</div>
+						</div>
+						<h2>Walkthrough/ Room Audit</h2></legend><br>
+             
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>Noise</h3></div>
+							<div class="panel-body">
+								<legend>N1</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio1">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texta" ng-hide="comment"  ng-init="comment=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_n1')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment=!comment"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_n1-image-area" display="inline"></div>
+								<legend>N2</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio2">Required!</span>
+									</div>
+								</div> 
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textb" ng-hide="comment1"  ng-init="comment1=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>								
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_n2')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment1=!comment1"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_n2-image-area" display="inline"></div>     
+								<legend>N3</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio3">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textc" ng-hide="comment2"  ng-init="comment2=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_n3')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment2=!comment2"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_n3-image-area" display="inline"></div>   
+								<legend>N4</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio4">Required!</span>
+									</div>
+								</div> 
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textd" ng-hide="comment3"  ng-init="comment3=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_n4')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment3=!comment3"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_n4-image-area" display="inline"></div>
+                 
+							</div>
+						</div> 
+					</fieldset>
+					<ul class="pager">
+						<li><a href="walkthrough_roomaudit_ps.html">Previous</a></li>
+						<li><a id="myLink" href="" ng-click="next('walkthrough_roomaudit_l.html')">Next</a></li>
+					</ul>
+
+				</form>
+
+			</div>
+
+
+		</div>    
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="jquery.min.js"></script> 
+		<script src="js/lib/js/slidebars.min.js"></script>
+		<script src="js/lib/js/sliding.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		HHCamera.loadImages('WT_n1');
+		HHCamera.loadImages('WT_n2');
+		HHCamera.loadImages('WT_n3');
+		HHCamera.loadImages('WT_n4');
+		</script>
+	</body>
+	</html>

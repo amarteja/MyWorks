@@ -1,0 +1,208 @@
+<!-- General Housing Characteristics -->
+<html>
+	<head>
+		<title>Healthy Homes Inspector</title>
+	</head>
+	<body>
+	<script type="text/javascript" src="js/validation.js"></script>
+	<script type="text/javascript">
+	
+	function calculateTrue(radios)
+	{
+	
+	var test = new Array();
+	for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+        test[i] = true;
+		}
+		else
+		{
+		test[i] = false;
+		}
+    }
+	
+	return test;
+	}
+	
+	function formValidation(form)  
+	{
+	var post1978_rd = calculateTrue(form.post1978);
+	//alert("Hello1111111111" + post1987_rd);
+	var roof_problems_rd = calculateTrue(form.roof_problems);
+	var missing_siding_rd = calculateTrue(form.missing_siding);
+	var standing_water_rd = calculateTrue(form.standing_water);
+	var cracks_in_foundation_rd = calculateTrue(form.cracks_in_foundation);
+	var vents_screened_rd = calculateTrue(form.vents_screened);
+	var debris_garbage_rd = calculateTrue(form.debris_garbage);
+	var visible_sourceof_leaks_rd = calculateTrue(form.visible_sourceof_leaks);
+	var natural_gas_rd = calculateTrue(form.natural_gas);
+	var oil_rd = calculateTrue(form.oil);
+	var woodorfireplace_rd = calculateTrue(form.woodorfireplace);
+	var baseboards_rd = calculateTrue(form.baseboards);
+	var space_heaters_rd = calculateTrue(form.space_heaters);
+	var unvented_combustion_rd = calculateTrue(form.unvented_combustion);
+	var forced_airheating_rd = calculateTrue(form.forced_airheating);
+	var check_forced_airheating_c = calculateTrue(form.check_forced_airheating);
+	var leaking_watertank_rd = calculateTrue(form.leaking_watertank);
+	var central_ventillation_rd = calculateTrue(form.central_ventillation);
+	var cooling_c = calculateTrue(form.cooling);
+	
+	if(Radio_Validation(post1978_rd))
+	{
+	if(Radio_Validation(roof_problems_rd))
+	{
+	if(Radio_Validation(missing_siding_rd))
+	{
+	if(Radio_Validation(standing_water_rd))
+	{
+	if(Radio_Validation(cracks_in_foundation_rd))
+	{
+	if(Radio_Validation(vents_screened_rd))
+	{
+	if(Radio_Validation(debris_garbage_rd))
+	{
+	if(Radio_Validation(visible_sourceof_leaks_rd))
+	{
+	if(Radio_Validation(natural_gas_rd))
+	{
+	if(Radio_Validation(oil_rd))
+	{
+	if(Radio_Validation(woodorfireplace_rd))
+	{
+	if(Radio_Validation(baseboards_rd))
+	{
+	if(Radio_Validation(space_heaters_rd))
+	{
+	if(Radio_Validation(unvented_combustion_rd))
+	{
+	if(Radio_Validation(forced_airheating_rd))
+	{
+	if(CheckBox_Validation(check_forced_airheating_c))
+	{
+	if(Radio_Validation(leaking_watertank_rd))
+	{
+	if(Radio_Validation(central_ventillation_rd))
+	{
+	if(CheckBox_Validation(cooling_c))
+	{
+	window.location="participants_action.html";
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	
+	}
+	return false;
+	}
+	</script>
+		
+		<p align = "center">General Housing Characteristics </p>
+		
+		<form name = "gen_housing_characteristics">
+		
+		<br><label for="post1978_main"> Post 1978 </label><br>
+			<input type="radio" name="post1978" value="yes">Yes
+			<input type="radio" name="post1978" value="no">No<br><br>
+			
+			<label for="exterior_observation"> Exterior Observations</label><br>
+			<label for="roof_problems_main"> Roof Problems</label><br>
+			<input type="radio" name="roof_problems" value="yes">Yes
+			<input type="radio" name="roof_problems" value="no">No<br><br>
+			
+			<label for="missing_siding_main"> Missing Siding/Brick </label><br>
+			<input type="radio" name="missing_siding" value="yes">Yes
+			<input type="radio" name="missing_siding" value="no">No<br><br>
+			
+			<label for="standing_water_main"> Standing Water at Foundation</label><br>
+			<input type="radio" name="standing_water" value="yes">Yes
+			<input type="radio" name="standing_water" value="no">No<br><br>
+			
+			<label for="cracks_in_foundation_main"> Cracks in Foundation Grade</label><br>
+			<input type="radio" name="cracks_in_foundation" value="yes">Yes
+			<input type="radio" name="cracks_in_foundation" value="no">No<br><br>
+			
+			<label for="vents_screened_main"> Vents Screened</label><br>
+			<input type="radio" name="vents_screened" value="yes">Yes
+			<input type="radio" name="vents_screened" value="no">No<br><br>
+			
+			<label for="debris_garbage_main">Debris/Garbage</label><br>
+			<input type="radio" name="debris_garbage" value="yes">Yes
+			<input type="radio" name="debris_garbage" value="no">No<br><br>
+			
+			<label for="visible_sourceof_leaks_main"> Visible Source of Leaks into Home</label><br>
+			<input type="radio" name="visible_sourceof_leaks" value="yes">Yes
+			<input type="radio" name="visible_sourceof_leaks" value="no">No<br><br>
+		
+			
+			<br><label for="heating_sources_in_home_main"> Heating Sources in home</label><br>
+			<label for="natural_gas_main">Natural Gas</label><br>			
+			<input type="radio" name="natural_gas" value="yes">Yes
+			<input type="radio" name="natural_gas" value="no">No<br><br>
+			
+			<label for="oil_main"> Oil</label><br>			
+			<input type="radio" name="oil" value="yes">Yes
+			<input type="radio" name="oil" value="no">No<br><br>
+			
+			<label for="woodorfireplace_main">Wood/Fireplace<label><br>			
+			<input type="radio" name="woodorfireplace" value="yes">Yes
+			<input type="radio" name="woodorfireplace" value="no">No<br><br>
+			
+			<label for="baseboards_main">baseboards</label><br>			
+			<input type="radio" name="baseboards" value="yes">Yes
+			<input type="radio" name="baseboards" value="no">No<br><br>
+			
+			<label for="space_heaters_main">Space Heaters</label><br>			
+			<input type="radio" name="space_heaters" value="yes">Yes
+			<input type="radio" name="space_heaters" value="no">No<br><br>
+			
+			<label for="unvented_combustion_main">Unvented combustion heaters,such as kerosene etc.</label><br>			
+			<input type="radio" name="unvented_combustion" value="yes">Yes
+			<input type="radio" name="unvented_combustion" value="no">No<br><br>
+			
+			<label for="forced_airheating_main">Forced air heating</label><br>			
+			<input type="radio" name="forced_airheating" value="yes">Yes
+			<input type="radio" name="forced_airheating" value="no">No<br><br>
+			
+			<label for="check_forced_airheating_main">If Forced air heating, furnace filters are</label><br>			
+			<input type="checkbox" name="check_forced_airheating" value="clean">Clean<br>
+			<input type="checkbox" name="check_forced_airheating" value="dirty">Dirty<br>
+			<input type="checkbox" name="check_forced_airheating" value="partially_dirty">Partially Dirty<br>
+			<input type="checkbox" name="check_forced_airheating" value="no_filter">No Filter<br><br>
+			
+			<label for="leaking_watertank_main"> Leaking Water Tank </label><br>
+			<input type="radio" name="leaking_watertank" value="yes">Yes
+			<input type="radio" name="leaking_watertank" value="no">No<br><br>
+			
+			<label for="central_ventillation_main"> Central Ventillation </label><br>
+			<input type="radio" name="central_ventillation" value="yes">Yes
+			<input type="radio" name="central_ventillation" value="no">No<br><br>
+			
+			<label for="cooling_main"> Cooling (Check all that apply) </label><br>
+			<input type="checkbox" name="cooling" value="windows">Windows<br>
+			<input type="checkbox" name="cooling" value="ac">Central/Window AC<br>
+			<input type="checkbox" name="cooling" value="fans">Fans<br>
+			<input type="checkbox" name="cooling" value="none">None<br><br>
+			
+			<br><br>
+			<div id="CheckBoxValidation" name="CheckBoxValidation"></div>
+			<div id="RadioValidation" name="RadioValidation"></div>
+			
+			<INPUT TYPE="button" NAME="next" Value="next" onClick="formValidation(this.form)">
+		</form>
+ 	</body>	
+
+</html>

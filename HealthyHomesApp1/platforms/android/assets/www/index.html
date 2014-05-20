@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+    function initSessionStorage(form){
+        sessionStorage.setItem('username', form.textfield.value);
+        window.location= "first.html";
+    }
+    
+    function sessionClear(){
+        sessionStorage.removeItem('username');
+        window.location= "first.html";
+    }
+</script>
+<form id="form1" name="form1" method="post">
+  <p>
+    <input type="button" name="New User" id="New User" value="New User" onclick="sessionClear()">
+  </p>
+  <p>
+    <label for="caretaker">Caretaker's Last Name</label>
+<label for="textfield">:</label>
+    <input type="text" name="textfield" id="textfield">
+    <input type="button" name="button" id="button" value="Existing User"  onClick="initSessionStorage(this.form)">
+  </p>
+</form>
+</body>
+</html>

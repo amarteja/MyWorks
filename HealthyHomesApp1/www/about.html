@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="HealthyHomes">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Healthy Homes Inspector Application</title>
+
+	<!-- Bootstrap -->
+	<link href="js/lib/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+        
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/js/angular-touch.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="phonegap.js"></script>
+	<script type="text/javascript" src="js/lib/camera.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery.min.js"></script>    
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/lib/js/bootstrap.min.js"></script>
+	<script src="checklist-model.js"></script>
+	<link rel="stylesheet" href="js/lib/css/slidebars.min.css">
+</head>
+<body>
+	<div class="container"  ng-swipe-right="prevPage('confidential_info.html')" ng-swipe-left="submit('general_neighbourhood_characteristics.html')">
+		<div class="row">   
+			<form name = "cover_sheet" class="form-horizontal" novalidate>
+				<fieldset>
+					<legend align="center"><button class="btn-default toggle-left pull-left glyphicon glyphicon-align-justify"></button>
+						<div class="sb-slidebar sb-left" align="center">
+							<div class="list-group">
+								<h4 align="center"> Main Menu</h4>
+								<a class="list-group-item list-group-item-danger" href="index.html"> Logout</a>
+								<a class="list-group-item" href="credits.html"> Credits</a>
+							</div>
+						</div>
+						About the App</legend><br>
+						<p>
+							Indoor	Air	Pollution	is	a	major	trigger	for	asthma.	A	new	initiative	at	the	City	of	Houston	
+							and	the	Baylor	College	of	Medicine	is	sending	teams	of	inspectors	to	houses	around	the	
+							city	when	children	are	diagnosed	with	asthma.	They	need	a	mobile	application	for	tablet	
+							that	helps	them	track	the	inspection.	Functionalities	are	desired	to	help	the	inspector	
+							during	inspection	of	a	house.
+						</p>
+						<p>
+							The	app	would	be	pre-loaded	with	information	about	the	structure	provided	in	advance	
+							by	the	city.	The	app	should	have	an	intuitive	interface	for	filling	out	information	on	the	
+							exterior	and	interior	of	the	house.	As	they	move	through	the	inspection,	rooms	should	
+							be	displayed	and	checklist	items	provided.	There	should	also	be	opportunities	to	upload	
+							photos	and	take	notes.	The	collected	data	should	be	saved	centrally.
+						</p>
+					</fieldset>
+				</div>
+			</form>
+		</div>
+	</div>      
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/lib/js/bootstrap.min.js"></script>
+	<script src="js/lib/js/slidebars.min.js"></script>
+	<script src="js/lib/js/sliding.js"></script>
+</body>
+</html>

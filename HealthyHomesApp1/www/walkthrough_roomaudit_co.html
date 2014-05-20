@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="HealthyHomes">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Healthy Homes Inspector Application</title>
+
+	<!-- Bootstrap -->
+	<link href="js/lib/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+        
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/js/angular-touch.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="phonegap.js"></script>
+	<script type="text/javascript" src="js/lib/camera.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>    
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/lib/js/bootstrap.min.js"></script>
+	<script src="checklist-model.js"></script>
+	<link rel="stylesheet" href="js/lib/css/slidebars.min.css">
+</head>
+<body>
+	<div class="container" data-ng-controller="walkthrough_roomaudit_co" data-ng-init="init('index.html')" ng-swipe-right="prevPage('walkthrough_roomaudit_pd.html')" ng-swipe-left="next('walkthrough_roomaudit_ps.html')">
+		<div class="row">
+
+			<form class="form-horizontal" name="walkthrough_co" novalidate>
+				<fieldset>
+					<legend align="center"><button class="btn-default toggle-left pull-left glyphicon glyphicon-align-justify"></button>
+						<div class="sb-slidebar sb-left" align="center">
+							<div class="list-group">
+								<h4 align="center"> Main Menu</h4>
+								<a  class="list-group-item" href="assessment_coversheet.html"> Assessment Coversheet</a>
+								<a  class="list-group-item" href="general_neighbourhood_characteristics.html">General Neighbourhood Characteristics</a>
+								<a  class="list-group-item list-group-item-danger" href="index.html"> Logout</a>
+								<a  class="list-group-item" href="about.html"> About</a>
+								<a  class="list-group-item" href="credits.html"> Credits</a>
+							</div>
+						</div>
+						<h2>Walkthrough/ Room Audit</h2></legend><br>
+             
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>Chemicals and Odors</h3></div>
+							<div class="panel-body"> 
+								<legend>C1. Cigarette buds, ashtrays with ashes</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio1">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texta" ng-hide="comment"  ng-init="comment=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c1')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment=!comment"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c1-image-area" display="inline"></div>
+								<legend>C2. Tobacco odor</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio2">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textb" ng-hide="comment1"  ng-init="comment1=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c2')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment1=!comment1"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c2-image-area" display="inline"></div>
+								<legend> C3. Fragrances(air freshner)</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio3">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textc" ng-hide="comment2"  ng-init="comment2=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c3')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment2=!comment2"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c3-image-area" display="inline"></div>
+								<legend>C4. Candles/Incense</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice4" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio4">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textd" ng-hide="comment3"  ng-init="comment3=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c4')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment3=!comment3"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c4-image-area" display="inline"></div>
+								<legend>C5. Strong smelling cleaner or chemicals</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio5">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texte" ng-hide="comment4"  ng-init="comment4=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c5')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment4=!comment4"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c5-image-area" display="inline"></div>     
+								<legend>C6. Pesticides</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio6">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textf" ng-hide="comment5"  ng-init="comment5=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c6')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment5=!comment5"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c6-image-area" display="inline"></div>    
+								<legend>C7. Other odors</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio7">Required!</span>
+									</div>
+								</div> 
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textg" ng-hide="comment6"  ng-init="comment6=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c7')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment6=!comment6"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c7-image-area" display="inline"></div>    
+								<legend>C8. Chemicals, medicines out of reach of children</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+                            
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice8"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice8" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice8" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice8" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio8">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texth" ng-hide="comment7"  ng-init="comment7=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_c8')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment7=!comment7"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_c8-image-area" display="inline"></div>
+							</div>
+						</div>
+					</fieldset>
+					<ul class="pager">
+						<li><a href="walkthrough_roomaudit_pd.html">Previous</a></li>
+						<li><a id="myLink" href="" ng-click="next('walkthrough_roomaudit_ps.html')">Next</a></li>
+					</ul>
+
+				</form>
+
+			</div>
+
+
+		</div>    
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="jquery.min.js"></script> 
+		<script src="js/lib/js/slidebars.min.js"></script>
+		<script src="js/lib/js/sliding.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		HHCamera.loadImages('WT_c1');
+		HHCamera.loadImages('WT_c2');
+		HHCamera.loadImages('WT_c3');
+		HHCamera.loadImages('WT_c4');
+		HHCamera.loadImages('WT_c5');
+		HHCamera.loadImages('WT_c6');
+		HHCamera.loadImages('WT_c7');
+		HHCamera.loadImages('WT_c8');
+		</script>
+	</body>
+	</html>

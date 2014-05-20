@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="HealthyHomes">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Healthy Homes Inspector Application</title>
+
+	<!-- Bootstrap -->
+	<link href="js/lib/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+        
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/js/angular-touch.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="phonegap.js"></script>
+	<script type="text/javascript" src="js/lib/camera.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>    
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/lib/js/bootstrap.min.js"></script>
+	<script src="checklist-model.js"></script>
+	<link rel="stylesheet" href="js/lib/css/slidebars.min.css">
+</head>
+<body>
+	<div class="container" data-ng-controller="walkthrough_roomaudit_g" data-ng-init="init('index.html')" ng-swipe-left="next('walkthrough_roomaudit_s.html')">
+		<div class="row">
+
+			<form class="form-horizontal" name = "walkthrough" novalidate>
+				<fieldset>
+					<legend align="center"><button class="btn-default toggle-left pull-left glyphicon glyphicon-align-justify"></button>
+						<div class="sb-slidebar sb-left" align="center">
+							<div class="list-group">
+								<h4 align="center"> Main Menu</h4>
+								<a  class="list-group-item" href="assessment_coversheet.html"> Assessment Coversheet</a>
+								<a  class="list-group-item" href="general_neighbourhood_characteristics.html">General Neighbourhood Characteristics</a>
+								<a  class="list-group-item list-group-item-danger" href="index.html"> Logout</a>
+								<a  class="list-group-item" href="about.html"> About</a>
+								<a  class="list-group-item" href="credits.html"> Credits</a>
+							</div>
+						</div>
+						<h2>Walkthrough/ Room Audit</h2></legend><br>
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3> General Inspection</h3></div>
+							<div class="panel-heading "><h3>G1. Type of Flooring </h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="Carpet loop" required> Carpet loop
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="option2" required> Carpet shag
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="option3" required> Hardwood or tile
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="option4" required> Linoleum
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="option5" required> Vinyl
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice"  value="option6" required> Other
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texta" ng-hide="comment"  ng-init="comment=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g1')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment=!comment"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								<div id="WT_g1-image-area" display="inline"></div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>G2.Is there cloth-covered furniture in the room</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice1" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio1">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textb" ng-hide="comment1"  ng-init="comment1=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g2')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment1=!comment1"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g2-image-area" display="inline"></div>
+							</div>
+						</div>
+                  
+             
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>G3.Are there stuffed toys in the room</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice2" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio2">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textc" ng-hide="comment2"  ng-init="comment2=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g3')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment2=!comment2"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g3-image-area" display="inline"></div>
+							</div>
+						</div>
+                
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>G4. Is an allergy cover used on the pillow</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice3" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio3">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textd" ng-hide="comment3"  ng-init="comment3=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g4')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment3=!comment3"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g4-image-area" display="inline"></div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">  
+							<div class="panel-heading "><h3>G5. Can atleast one window be opened</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice5" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio4">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texte" ng-hide="comment4"  ng-init="comment4=true" rows="2"></textarea>
+								</div>
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g5')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment4=!comment4"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g5-image-area" display="inline"></div>
+							</div>
+						</div>
+                    
+						<div class="panel panel-default">   
+							<div class="panel-heading "><h3>G6. Type of Window covering</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="cover"  value="none" required> None 
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="cover"  value="blinda" required> Blinds
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="cover"  value="shades" required> Shades
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="cover"  value="curtain" required> Curtain/drapes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="cover"  value="not assessed" required> Not assessed
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio5">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textf" ng-hide="comment5"  ng-init="comment5=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g6_covering')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>                  
+								<button class="btn btn-info" ng-click="comment5=!comment5"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g6_covering-image-area" display="inline"></div>
+								<legend>If blinds/curtains are the cords out of reach</legend>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice6" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio6">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textg" ng-hide="comment6"  ng-init="comment6=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g6_cords')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment6=!comment6"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g6_cords-image-area" display="inline"></div>
+							</div>
+						</div>
+                    
+						<div class="panel panel-default">   
+							<div class="panel-heading "><h3>G7. Level of dust on surfaces in room </h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="dust"  value="none" required> None
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="dust"  value="slight" required> Slight
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="dust"  value="moderate" required> Moderate
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="dust"  value="Heavy" required>Heavy
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="dust"  value="not assessed" required> Not Assessed
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio7">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texth" ng-hide="comment7"  ng-init="comment7=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g7')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment7=!comment7"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								<div id="WT_g7-image-area" display="inline"></div>
+							</div>
+						</div>
+                
+						<div class="panel panel-default">
+							<div class="panel-heading "><h3>G8. If central heating/cooling system</h3></div>
+							<div class="panel-body">
+								<legend>Does room have open supply vent</legend>    
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2">
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7"  value="Yes" required> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="No" required> No
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="Dont Know" required> Dont Know
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-model="choice7" value="Not Applicable" required> Not Applicable
+										</label>
+										<span class="label label-warning" data-ng-show="submitted && radio8">Required!</span>
+									</div>
+								</div>
+								<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="texti" ng-hide="comment8"  ng-init="comment8=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+								<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g8_supply_vent')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+								<button class="btn btn-info" ng-click="comment8=!comment8"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+								
+								<div id="WT_g8_supply_vent-image-area" display="inline"></div>
+								<legend>Does the room have unobstructed return vent</legend>
+								<div class="form-group">
+									<div class="col-sm-6 col-sm-offset-2">
+										<label class="checkbox-inline">
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice8"  value="Yes" required> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice8" value="No" required> No
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice8" value="Dont Know" required> Dont Know
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice8" value="Not Applicable" required> Not Applicable
+											</label>
+											<span class="label label-warning" data-ng-show="submitted && radio9">Required!</span>
+										</div>
+									</div>
+									<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textj" ng-hide="comment9"  ng-init="comment9=true" rows="2"></textarea>
+								</div>
+								
+									<div class="clear"></div>
+									<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g8_return_vent')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+									<button class="btn btn-info" ng-click="comment9=!comment9"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+									
+									<div id="WT_g8_return_vent-image-area" display="inline"></div>
+								</div>
+							</div>
+                
+							<div class="panel panel-default">
+								<div class="panel-heading "><h3>G9. If bathroom, is there a working exhaust fan</h3></div>
+								<div class="panel-body">
+									<div class="form-group">
+										<div class="col-sm-8 col-sm-offset-2">
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice9"  value="Yes" required> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice9" value="No" required> No
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice9" value="Dont Know" required> Dont Know
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice9" value="Not Applicable" required> Not Applicable
+											</label>
+											<span class="label label-warning" data-ng-show="submitted && radio10">Required!</span>
+										</div>
+									</div>
+									<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textk" ng-hide="comment10"  ng-init="comment10=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+									<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g9')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+									<button class="btn btn-info" ng-click="comment10=!comment10"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+									<div id="WT_g9-image-area" display="inline"></div>
+									<legend> Vented to outside</legend>
+									<div class="form-group">
+										<div class="col-sm-8 col-sm-offset-2">
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice10"  value="Yes" required> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice10" value="No" required> No
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice10" value="Dont Know" required> Dont Know
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice10" value="Not Applicable" required> Not Applicable
+											</label>
+											<span class="label label-warning" data-ng-show="submitted && radio11">Required!</span>
+										</div>
+									</div>
+									<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textl" ng-hide="comment11"  ng-init="comment11=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+									<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g9_vent_out')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+									<button class="btn btn-info" ng-click="comment11=!comment11"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+									<div id="WT_g9_vent_out-image-area" display="inline"></div>
+									<legend> Fan suction adequate</legend>
+									<div class="form-group">
+										<div class="col-sm-8 col-sm-offset-2">
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice11"  value="Yes" required> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice11" value="No" required> No
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice11" value="Dont Know" required> Dont Know
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice11" value="Not Applicable" required> Not Applicable
+											</label>
+											<span class="label label-warning" data-ng-show="submitted && radio12">Required!</span>
+										</div>
+									</div>
+									<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textm" ng-hide="comment12"  ng-init="comment12=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+									<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g9_suction')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+									<button class="btn btn-info" ng-click="comment12=!comment12"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+									<div id="WT_g9_suction-image-area" display="inline"></div>
+									<legend> Frequency of fan use</legend>
+									<div class="form-group">
+										<div class="col-sm-8 col-sm-offset-2">
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice12"  value="Yes" required> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice12" value="No" required> No
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice12" value="Dont Know" required> Dont Know
+											</label>
+											<label class="radio-inline">
+												<input type="radio" ng-model="choice12" value="Not Applicable" required> Not Applicable
+											</label>
+											<span class="label label-warning" data-ng-show="submitted && radio13">Required!</span>
+										</div>
+									</div>
+									<div class="col-sm-6 col-sm-offset-2" >
+								<textarea class="form-control" ng-model="textn" ng-hide="comment13"  ng-init="comment13=true" rows="2"></textarea>
+								</div>
+								
+								<div class="clear"></div>
+									<button class="btn btn-info" onclick="HHCamera.takePicture('WT_g9_fan_frequency')"><span class="glyphicon glyphicon-camera" style="font-size: 22px;"></span></button>
+									<button class="btn btn-info" ng-click="comment13=!comment13"><span class="glyphicon glyphicon-pencil" style="font-size: 22px;"></span></button>
+									<div id="WT_g9_fan_frequency-image-area" display="inline"></div>
+								</div>
+							</div>
+                
+						</fieldset>
+						<ul class="pager">
+							<li><a href="building_char_b12b13.html">Previous</a></li>
+							<li><a id="myLink" href="" ng-click="next('walkthrough_roomaudit_s.html')">Next</a></li>
+						</ul>
+
+					</form>
+
+				</div>
+
+
+			</div>    
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script src="jquery.min.js"></script> 
+			<script src="js/lib/js/slidebars.min.js"></script>
+			<script src="js/lib/js/sliding.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script src="js/lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript">
+			HHCamera.loadImages('WT_g1');
+			HHCamera.loadImages('WT_g2');
+			HHCamera.loadImages('WT_g3');
+			HHCamera.loadImages('WT_g4');
+			HHCamera.loadImages('WT_g5');
+			HHCamera.loadImages('WT_g6_covering');
+			HHCamera.loadImages('WT_g6_cords');
+			HHCamera.loadImages('WT_g7');
+			HHCamera.loadImages('WT_g8_supply_vent');
+			HHCamera.loadImages('WT_g8_return_vent');
+			HHCamera.loadImages('WT_g9');
+			HHCamera.loadImages('WT_g9_vent_out');
+			HHCamera.loadImages('WT_g9_suction');
+			HHCamera.loadImages('WT_g9_fan_frequency');
+			</script>
+		</body>
+		</html>

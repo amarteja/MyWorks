@@ -1,0 +1,205 @@
+    <!-- General Assessment -->
+    <html>
+        <head>
+            <title>Healthy Homes Inspector</title>
+        </head>
+        <body>
+
+        <script type="text/javascript" src="js/validation.js"></script>
+        <script src="phonegap.js"></script>
+        <script src="jquery-1.5.min.js"></script>
+		 <script type="text/javascript" src="js/storage.js"></script>
+
+        <script type = "text/javascript">
+
+        function formValidation(form){
+        var a_i = form.a_i.value;
+        var caretaker_fname = form.caretaker_fname.value;
+        var caretaker_lname = form.caretaker_lname.value;
+        var child_fname = form.child_fname.value;
+        var child_lname = form.child_lname.value;
+        var street_addr1 = form.street_addr1.value;
+        var street_addr2 = form.street_addr2.value;
+        var city_field = form.city_field.value;
+        var zip_field = form.zip_field.value;
+        var time = getCurrentTime(); 
+        var data = getCurrentDate();
+
+       
+        if(textbox_validation(a_i,"a_i_Error"))
+        {
+        if(textbox_validation(caretaker_fname,"caretaker_fname_Error"))
+        {
+        if(textbox_validation(caretaker_lname,"caretaker_lname_Error"))
+        {
+        if(textbox_validation(child_fname,"child_fname_Error"))
+        {
+        if(textbox_validation(child_fname,"child_lname_Error"))
+        {
+        if(textbox_validation(street_addr1,"street_addr1_Error"))
+        {
+        if(textbox_validation(street_addr2,"street_addr2_Error"))
+        {
+        if(textbox_validation(city_field,"city_field_Error"))
+        {
+        if(zip_validation(zip_field))
+        {
+            
+            var myArray = new Array(a_i, caretaker_fname, caretaker_lname, child_fname, child_lname, street_addr1,   
+                                     street_addr2,city_field, zip_field, time, data);
+			saveinLocalStorage(myArray,caretaker_lname)
+			
+             var postData = $(form).serialize();
+            
+           // alert("hello:" + postData);
+            
+            $.ajax({
+                type: 'POST',
+                //change the url for your project
+                url: 'http://192.168.2.5/DBconnectphp/save.php',
+				data: postData,
+                success: function(data){
+                    console.log(data);
+                    alert('database is updated');
+                },
+                error: function(){
+                    console.log(data);
+                    alert('updating database failed');
+                }
+            });
+            
+            
+            window.location= "general_housing_characteristics.html";
+            
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        return false;
+        }
+        </script>
+            <p align = "center">General Assessment</p>
+
+            <form name = 'General Assessment'>
+
+            <br><label for="date"> Date: </label>
+                <span id="date-time"> <script>document.write(getCurrentDate())</script> </span><br><br>
+
+
+                <label for="assessor_initial"> Assessor's Initials</label>
+                <input type = "text" id = "a_i" name="a_i">
+                <div id="a_i_Error" name="a_i_Error"></div><br><br>
+
+                <label for="start_time"> Start Time</label>
+                <span id="date-time" name = "start_time"> <script>document.write(getCurrentTime())</script><br><br>
+
+                <label for="caretaker"> Caretaker's :  </label>
+                <label for="caretaker_firstname"> First Name </label>
+                <input type = "text" id = "caretaker_fname" name = "caretaker_fname">
+
+                <label for="caretaker_lastname"> Last Name </label>
+                <input type = "text" id = "caretaker_lname" name = "caretaker_lname">
+                <div id="caretaker_fname_Error" name="caretaker_fname_Error"></div>
+                <div id="caretaker_lname_Error" name="caretaker_lname_Error"></div><br><br>
+
+                <label for="child"> Child's : </label>
+                <label for="child_firstname"> First Name </label>
+                <input type = "text" id = "child_fname" name = "child_fname">
+
+                <label for="child_lastname"> Last Name </label>
+                <input type = "text" id = "child_lname" name = "child_lname">
+
+                <div id="child_fname_Error" name="child_fname_Error"></div>
+                <div id="child_lname_Error" name="child_lname_Error"></div><br><br>
+
+                <label for = "address"> Address </label><br>
+                <label for = "street1"> Street1</label>
+                <input type = "text" id = "street_addr1" name = "street_addr1">
+                <label for = "street2"> Street2</label>
+                <input type = "text" id = "street_addr2" name = "street_addr2">
+                <label for = "city"> City</label>
+                <input type = "text" id = "city_field" name = "city_field">
+                <label for = "zip"> Zip</label>
+                <input type = "text" id = "zip_field" name = "zip_field">
+
+                <div id="street_addr1_Error" name="street_addr1_Error"></div>
+                <div id="street_addr2_Error" name="street_addr2_Error"></div>
+                <div id="city_field_Error" name="city_field_Error"></div>
+                <div id="zip_validation" name="zip_validation"></div><br><br>
+
+                <script type="text/javascript">
+                    var username = sessionStorage.getItem('username');
+                    var output = $('#output');
+                    if(sessionStorage.getItem('username') != null)
+                    {
+                        if(localStorage.getItem(username) != null){
+                            //var myArray = JSON.parse(localStorage.getItem(username));
+							var myArray = retrieveFormLocal(username);
+                        var elem = document.getElementById("a_i");
+                        elem.value = myArray[0];
+                        var elem = document.getElementById("caretaker_fname");
+                        elem.value = myArray[1];
+                        var elem = document.getElementById("caretaker_lname");
+                        elem.value = myArray[2];
+                        var elem = document.getElementById("child_fname");
+                        elem.value = myArray[3];
+                        var elem = document.getElementById("child_lname");
+                        elem.value = myArray[4];
+                        var elem = document.getElementById("street_addr1");
+                        elem.value = myArray[5];
+                        var elem = document.getElementById("street_addr2");
+                        elem.value = myArray[6];
+                        var elem = document.getElementById("city_field");
+                        elem.value = myArray[7];
+                        var elem = document.getElementById("zip_field");
+                        elem.value = myArray[8];
+                        }
+                        else
+                        {
+                   $.ajax({
+                    type: 'GET',
+                     url: 'http://192.168.2.5/DBconnectphp/retrieve.php',
+                     dataType: 'jsonp',
+                     jsonp: 'jsoncallback',
+                    data: {userid: username},
+                     timeout: 5000,
+                     success: function(data, status) {
+                        $.each(data, function(i,item){ 
+
+                        var elem = document.getElementById("a_i");
+                        elem.value = item .a_i;
+                        elem = document.getElementById("caretaker_fname");
+                        elem.value = item.caretaker_fname;
+                        elem = document.getElementById("caretaker_lname");
+                        elem.value = item.caretaker_lname;
+                        elem = document.getElementById("child_fname");
+                        elem.value = item.child_fname;
+                        elem = document.getElementById("child_lname");
+                        elem.value = item.child_lname;
+                        elem = document.getElementById("street_addr1");
+                        elem.value = item.street_addr1;
+                        elem = document.getElementById("street_addr2");
+                        elem.value = item.street_addr2;
+                        elem = document.getElementById("city_field");
+                        elem.value = item.city_field;
+                        elem = document.getElementById("zip_field");
+                        elem.value = item.zip_field;
+                    });
+                },
+                error: function(){
+                    output.text('There was an error loading the data.');
+                }
+            });
+                    }
+                    }                
+                </script>
+                <INPUT TYPE="button" NAME="next" Value="next" onClick="formValidation(this.form)">
+            </form>
+        </body>	
+
+    </html>
