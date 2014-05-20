@@ -1,0 +1,4 @@
+Keep all th files in a folder and the below instruction
+
+javac CertifyNF.java
+java Certify database=dbxyz.txt
