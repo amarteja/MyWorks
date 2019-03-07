@@ -1,5 +1,3 @@
-Assign3: Due 11:59PM November 9th
-
 Suppose a company has offices in several locations and is keen on monitoring 
 the weather at those locations. They're asked us to create an application that
 displays the high, low, current temperature, and condition (showers, hail, etc.) for each location. 
@@ -31,20 +29,3 @@ Write two versions of the program (reuse as much code between the versions as po
 
 When we run the program, it should report the time (in seconds) it took to 
 run, for each version. Don't include the print time in the time calculation.
-
-Use an OO language of your choice from Java/C#/C++/Ruby to implement this application.
-
-Total [100]: 95
-
-Information displayed in the desired format [30]:
-Min and Max displayed [10]:
-Min and Max computed as data is received [10]:
-Race conditions addressed [10]:
-Performance improvement realized [20]:
-
-Code reused between version [10]: -2 Some duplication, still need to reduce 
-further.
-
-Code concise and of reasonable quality [10]: -3
-this.property = something is a very poor coding style prevalent in the 
-industry, should not get into that habit.
